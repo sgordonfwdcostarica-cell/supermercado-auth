@@ -1,15 +1,15 @@
 .formproductos {
   background: var(--sf-surface);
   width: 100%;
+  border: 1px solid #222;
+  border-radius: 20px;
   max-width: 500px;
   margin: 3rem auto;
   padding: 3rem;
-  border-radius: var(--sf-rad-lg);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   box-shadow: var(--sf-shadow-card);
-  border: 1px solid var(--sf-border);
 }
 
 .formproductos h2 {
@@ -28,6 +28,7 @@
   background-color: var(--sf-surface-alt);
   color: var(--sf-text-primary);
   transition: all 0.2s ease;
+  border-bottom: 1px solid #222;
 }
 
 .inputRegistro::placeholder {

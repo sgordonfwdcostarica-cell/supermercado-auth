@@ -1,8 +1,16 @@
-.lista-productos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem 0;
+/* CSS Variables for consistency */
+:root {
+  --sf-green: #10b981;
+  --sf-green-dark: #059669;
+  --sf-surface: #ffffff;
+  --sf-surface-alt: #f9fafb;
+  --sf-border: #e5e7eb;
+  --sf-text-primary: #111827;
+  --sf-text-muted: #6b7280;
+  --sf-rad-sm: 6px;
+  --sf-rad-md: 12px;
+  --sf-rad-lg: 16px;
+  --sf-shadow-card: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
 /* Identical Product Card Reference Styling */
@@ -32,6 +40,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-image-container {
+  position: relative;
+  height: 180px;
+}
+
+.card-image {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .oferta-badge {
@@ -182,4 +201,75 @@
 
 .btnConfirmar:hover {
   background-color: var(--sf-green-dark);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #f3f4f6; /* Light gray background for better contrast */
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-rad-md);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin: 0 0 1rem 0;
+  color: var(--sf-text-primary);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--sf-border);
+  border-radius: var(--sf-rad-sm);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  background-color: var(--sf-surface-alt);
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: var(--sf-green);
+  background-color: var(--sf-surface);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btnCancelar {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--sf-rad-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnCancelar:hover {
+  background-color: #dc2626;
 }

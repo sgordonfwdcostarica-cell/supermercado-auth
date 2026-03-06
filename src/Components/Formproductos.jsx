@@ -8,13 +8,15 @@ function FormProductos() {
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState("");
+  const [img, setImg] = useState("");
 
   async function productosRegistro() {
     const producto = {
       nombre: name,
       precio: price,
       cantidad: quantity,
-      categoria: category
+      categoria: category,
+      img: img || "https://via.placeholder.com/150"
     };
 
     await postData(producto, "products");
@@ -45,6 +47,14 @@ function FormProductos() {
           className="inputRegistro"
           onChange={(e) => setQuantity(e.target.value)}
         />
+
+      <input 
+          type="text"
+          placeholder="URL de la imagen"
+          className="inputRegistro"
+          onChange={(e) => setImg(e.target.value)}
+      />
+
 
         <select
           className="selectRegistro"

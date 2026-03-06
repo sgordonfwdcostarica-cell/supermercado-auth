@@ -13,6 +13,7 @@ function ListaProductos() {
     const [precioEditar,setPrecioEditar] = useState("")
     const [cantidadEditar,setCantidadEditar] = useState("")
     const [categoriaEditar,setCategoriaEditar] = useState("")
+    const [imagenEditar,setImagenEditar] = useState("")
 
     useEffect(() => {
         async function traerproducts() {
@@ -33,7 +34,8 @@ function ListaProductos() {
             nombre: nombreEditar,
             precio: precioEditar,
             cantidad: cantidadEditar,
-            categoria: categoriaEditar
+            categoria: categoriaEditar,
+            img: imagenEditar
         }
         await patchData(objProducto,"products",id)
         
@@ -46,10 +48,17 @@ function ListaProductos() {
             {productos.map((producto) => {
                 return (
                     <div key={producto.id} className="productoCard">
-                        {/* Fake image area matching "Ofertas" */}
-                        <div className="card-image-placeholder">
-                            <span className="oferta-badge">OFERTA</span>
-                        </div>
+                        {producto.img ? (
+                            <div className="card-image-container">
+                                <img src={producto.img} alt={producto.nombre} className="card-image" />
+                                <span className="oferta-badge">OFERTA</span>
+                            </div>
+                        ) : (
+                            <div className="card-image-placeholder">
+                                <span className="oferta-badge">OFERTA</span>
+                            </div>
+                        )}
+                        
                         <div className="productoInfo">
                             <h3>{producto.nombre}</h3>
                             <p className="subtext">{producto.cantidad} uds. aprox.</p>
@@ -66,7 +75,8 @@ function ListaProductos() {
                                 setNombreEditar(producto.nombre)
                                 setPrecioEditar(producto.precio)
                                 setCantidadEditar(producto.cantidad)
-                                setCategoriaEditar(producto.categoria) 
+                                setCategoriaEditar(producto.categoria)
+                                setImagenEditar(producto.img || "")
                             }}>
                                 🛒 Editar
                             </button>
@@ -80,18 +90,28 @@ function ListaProductos() {
             </div>
 
             {mostrarEditar && 
-                <div className="editarForm">
-                    <h3>Editar Producto</h3>
-                    <input type="text" placeholder="Nombre" value={nombreEditar} onChange={(e)=>setNombreEditar(e.target.value)} />
-                    <input type="number" placeholder="Precio" value={precioEditar} onChange={(e)=>setPrecioEditar(e.target.value)} />
-                    <input type="number" placeholder="Cantidad" value={cantidadEditar} onChange={(e)=>setCantidadEditar(e.target.value)} />
-                    <input type="text" placeholder="Categoría" value={categoriaEditar} onChange={(e)=>setCategoriaEditar(e.target.value)} />
-                    <button
-                        className="btnConfirmar"
-                        onClick={()=>{
-                            actualizarProducto(idEditar)
-                        }}
-                    >Confirmar</button>
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h3>Editar Producto</h3>
+                        <input type="text" placeholder="Nombre" value={nombreEditar} onChange={(e)=>setNombreEditar(e.target.value)} />
+                        <input type="number" placeholder="Precio" value={precioEditar} onChange={(e)=>setPrecioEditar(e.target.value)} />
+                        <input type="number" placeholder="Cantidad" value={cantidadEditar} onChange={(e)=>setCantidadEditar(e.target.value)} />
+                        <input type="text" placeholder="Categoría" value={categoriaEditar} onChange={(e)=>setCategoriaEditar(e.target.value)} />
+                        <input type="text" placeholder="URL de la Imagen" value={imagenEditar} onChange={(e)=>setImagenEditar(e.target.value)} />
+                        <div className="modal-actions">
+                            <button
+                                className="btnConfirmar"
+                                onClick={()=>{
+                                    actualizarProducto(idEditar)
+                                    setMostrarEditar(false)
+                                }}
+                            >Confirmar</button>
+                            <button
+                                className="btnCancelar"
+                                onClick={() => setMostrarEditar(false)}
+                            >Cancelar</button>
+                        </div>
+                    </div>
                 </div>
             }
         </div>
