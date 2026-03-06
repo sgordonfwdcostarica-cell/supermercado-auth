@@ -1,0 +1,25 @@
+.cont-navbar{
+  background-color: #cccccc80;
+  width: 1520px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  border-bottom: none;
+}
+
+.cont-links{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  position: relative;
+  top: -40px;
+
+  .links{
+    text-decoration: none;
+    color: #222;
+  }
+}
+
+.titulo{
+  color: #222;
+}

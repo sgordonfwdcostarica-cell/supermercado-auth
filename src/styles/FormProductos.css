@@ -1,0 +1,94 @@
+/* Fondo general */
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:  url('../imgs/fondo.avif') center/cover no-repeat;
+  background-blend-mode: overlay;
+}
+
+/* Contenedor del formulario */
+.formproductos{
+  background:white;
+  width:380px;
+  margin:60px auto;
+  padding:35px;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  box-shadow:0 8px 24px rgba(76, 175, 80, 0.2);
+  border:2px solid #4CAF50;
+}
+
+/* Título */
+.formproductos h2{
+  text-align:center;
+  color:#4CAF50;
+  margin-bottom:10px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* Inputs */
+.inputRegistro{
+  padding:12px;
+  border-radius:10px;
+  border:2px solid #4CAF50;
+  font-size:15px;
+  transition:0.3s;
+  background:#F1F8E9;
+}
+
+/* Focus inputs */
+.inputRegistro:focus{
+  outline:none;
+  border:2px solid #00BCD4;
+  box-shadow:0 0 8px rgba(0, 188, 212, 0.4);
+  background:#E0F2F1;
+}
+
+/* Select */
+.selectRegistro{
+  padding:12px;
+  border-radius:10px;
+  border:2px solid #4CAF50;
+  font-size:15px;
+  background:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* Focus select */
+.selectRegistro:focus{
+  outline:none;
+  border:2px solid #00BCD4;
+  box-shadow:0 0 8px rgba(0, 188, 212, 0.4);
+}
+
+/* Botón */
+.btnRegistro{
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background: #4CAF50;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Hover botón */
+.btnRegistro:hover{
+  background: #2E7D32;
+  transform:scale(1.03);
+  box-shadow:0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive */
+@media(max-width:420px){
+  .formproductos{
+    width:90%;
+  }
+}

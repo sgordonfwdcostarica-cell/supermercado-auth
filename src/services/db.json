@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Administrador",
+      "email": "admin@gmail.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "016d",
+      "nombre": "Pepe",
+      "email": "pepe@pepe.pepe",
+      "clave": "pepe",
+      "rol": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id": "1efe",
+      "nombre": "j",
+      "precio": "1",
+      "cantidad": "2",
+      "categoria": "frutas"
+    },
+    {
+      "id": "aef2",
+      "nombre": "j",
+      "precio": "1",
+      "cantidad": "2",
+      "categoria": "frutas"
+    },
+    {
+      "id": "bf47",
+      "nombre": "j",
+      "precio": "1",
+      "cantidad": "2",
+      "categoria": "frutas"
+    },
+    {
+      "id": "1d5c",
+      "nombre": "j",
+      "precio": "1",
+      "cantidad": "2",
+      "categoria": "frutas"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

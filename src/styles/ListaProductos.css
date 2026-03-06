@@ -1,0 +1,137 @@
+/* Fondo general */
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:  url('../imgs/fondo.avif') center/cover no-repeat;
+  background-blend-mode: overlay;
+  padding:30px;
+}
+
+/* Título */
+h2{
+  text-align:center;
+  color:#4CAF50;
+  margin-bottom:30px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* Tarjeta de producto */
+.productoCard{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:15px;
+  box-shadow:0 4px 16px rgba(76, 175, 80, 0.15);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  border:2px solid #4CAF50;
+  transition:0.3s;
+}
+
+.productoCard:hover{
+  box-shadow:0 6px 20px rgba(76, 175, 80, 0.25);
+  transform:translateY(-2px);
+}
+
+/* Información del producto */
+.productoInfo{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.productoInfo h3{
+  margin:0;
+  font-size:16px;
+  color:#333;
+  font-weight:bold;
+}
+
+/* Botones */
+.btnEliminar{
+  background: #FF7043;
+  border:none;
+  padding:8px 14px;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  margin-right:5px;
+  transition:0.3s;
+  box-shadow:0 2px 8px rgba(255, 112, 67, 0.3);
+}
+
+.btnEliminar:hover{
+  background: #E64A19;
+  transform:scale(1.05);
+}
+
+.btnEditar{
+  background: #00BCD4;
+  border:none;
+  padding:8px 14px;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  box-shadow:0 2px 8px rgba(0, 188, 212, 0.3);
+}
+
+.btnEditar:hover{
+  background: #0097A7;
+  transform:scale(1.05);
+}
+
+/* Formulario de edición */
+.editarForm{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:300px;
+  box-shadow:0 4px 16px rgba(76, 175, 80, 0.2);
+  border:2px solid #4CAF50;
+}
+
+.editarForm input{
+  padding:10px;
+  border-radius:8px;
+  border:2px solid #4CAF50;
+  transition:0.3s;
+}
+
+.editarForm input:focus{
+  outline:none;
+  border:2px solid #00BCD4;
+  box-shadow:0 0 8px rgba(0, 188, 212, 0.4);
+}
+
+.btnConfirmar{
+  background: #4CAF50;
+  border:none;
+  padding:10px;
+  border-radius:6px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.btnConfirmar:hover{
+  background: #2E7D32;
+  transform:scale(1.05);
+  box-shadow:0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive */
+@media (max-width:400px){
+  .formproductos{
+    width:90%;
+  }
+}

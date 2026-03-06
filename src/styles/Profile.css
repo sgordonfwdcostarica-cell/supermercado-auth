@@ -1,0 +1,15 @@
+.profile{
+  width:400px;
+  margin:80px auto;
+  padding:30px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  text-align:center;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body{
+  background:  url('../imgs/fondo.avif') center/cover no-repeat;
+  background-blend-mode: overlay;
+  min-height:100vh;
+}

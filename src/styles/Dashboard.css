@@ -1,0 +1,40 @@
+.dashboard{
+  padding:40px;
+  background:  url('../imgs/fondo.avif') center/cover no-repeat;
+  background-blend-mode: overlay;
+  min-height:100vh;
+}
+
+.product{
+  border:2px solid #4CAF50;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  box-shadow:0 4px 12px rgba(76, 175, 80, 0.15);
+  transition:0.3s;
+}
+
+.product:hover{
+  box-shadow:0 6px 16px rgba(76, 175, 80, 0.25);
+  transform:translateY(-2px);
+}
+
+.product button{
+  background: #4CAF50;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  cursor:pointer;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.product button:hover{
+  background: #2E7D32;
+  transform:scale(1.05);
+}
