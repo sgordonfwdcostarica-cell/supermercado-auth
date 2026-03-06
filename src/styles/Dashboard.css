@@ -1,40 +1,74 @@
-.dashboard{
-  padding:40px;
-  background:  url('../imgs/fondo.avif') center/cover no-repeat;
-  background-blend-mode: overlay;
-  min-height:100vh;
+.dashboard {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
 }
 
-.product{
-  border:2px solid #4CAF50;
-  padding:20px;
-  margin-bottom:15px;
-  border-radius:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:white;
-  box-shadow:0 4px 12px rgba(76, 175, 80, 0.15);
-  transition:0.3s;
+.dashboard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #111827;
+  font-weight: 800;
 }
 
-.product:hover{
-  box-shadow:0 6px 16px rgba(76, 175, 80, 0.25);
-  transform:translateY(-2px);
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
-.product button{
-  background: #4CAF50;
-  color:white;
-  border:none;
-  padding:10px 20px;
-  cursor:pointer;
-  border-radius:8px;
-  font-weight:bold;
-  transition:0.3s;
+/* Identical Product Card Reference Styling */
+.product {
+  background: var(--sf-surface);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  border: 1px solid var(--sf-border);
+  overflow: hidden;
+  padding: 0;
 }
 
-.product button:hover{
-  background: #2E7D32;
-  transform:scale(1.05);
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.product h3 {
+  font-size: 1rem;
+  color: var(--sf-text-primary);
+  margin: 1.25rem 1.25rem 0.5rem 1.25rem;
+  font-weight: 700;
+}
+
+.product p {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0 1.25rem 1.25rem 1.25rem;
+  flex-grow: 1; 
+}
+
+/* Match the "Agregar" button from SuperFresh */
+.product button {
+  width: calc(100% - 2.5rem);
+  margin: 0 1.25rem 1.25rem 1.25rem;
+  background-color: #ecfdf5; 
+  color: #059669; 
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.product button:hover {
+  background-color: #d1fae5;
 }

@@ -40,47 +40,61 @@ function ListaProductos() {
     }
 
     return (
-        <>
+        <div className="container" style={{ padding: '2rem' }}>
             <h2>Lista de Productos</h2>
+            <div className="lista-productos-container">
             {productos.map((producto) => {
                 return (
-                    <div>
-                        <h3>{producto.nombre}</h3>
-                        <h3>{producto.precio}</h3>
-                        <h3>{producto.cantidad}</h3>
-                        <h3>{producto.categoria}</h3>
-                        <button onClick={() => {
-                            eliminarProducto(producto.id)
-                        }}>Eliminar</button>
-                        <button onClick={()=>{
-                            setMostrarEditar(!mostrarEditar)
-                            setIdEditar(producto.id)
-                            setNombreEditar(producto.nombre)
-                            setPrecioEditar(producto.precio)
-                            setCantidadEditar(producto.cantidad)
-                            setCategoriaEditar(producto.categoria) 
-                        }}>
-                            Editar
-                        </button>
+                    <div key={producto.id} className="productoCard">
+                        {/* Fake image area matching "Ofertas" */}
+                        <div className="card-image-placeholder">
+                            <span className="oferta-badge">OFERTA</span>
+                        </div>
+                        <div className="productoInfo">
+                            <h3>{producto.nombre}</h3>
+                            <p className="subtext">{producto.cantidad} uds. aprox.</p>
+                            <div className="price-row">
+                                <span className="price-main">${producto.precio}.00</span>
+                                {/* Fake old price for effect */}
+                                <span className="price-old">${(Number(producto.precio) * 1.2).toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <div className="productoActions">
+                            <button className="btnEditar" onClick={()=>{
+                                setMostrarEditar(!mostrarEditar)
+                                setIdEditar(producto.id)
+                                setNombreEditar(producto.nombre)
+                                setPrecioEditar(producto.precio)
+                                setCantidadEditar(producto.cantidad)
+                                setCategoriaEditar(producto.categoria) 
+                            }}>
+                                🛒 Editar
+                            </button>
+                            <button className="btnEliminar" onClick={() => {
+                                eliminarProducto(producto.id)
+                            }}>🗑️</button>
+                        </div>
                     </div>
                 )
             })}
+            </div>
 
             {mostrarEditar && 
-                <>
-                    <input type="text" value={nombreEditar} onChange={(e)=>setNombreEditar(e.target.value)} />
-                    <input type="text" value={precioEditar} onChange={(e)=>setPrecioEditar(e.target.value)} />
-                    <input type="text" value={cantidadEditar} onChange={(e)=>setCantidadEditar(e.target.value)} />
-                    <input type="text" value={categoriaEditar} onChange={(e)=>setCategoriaEditar(e.target.value)} />
+                <div className="editarForm">
+                    <h3>Editar Producto</h3>
+                    <input type="text" placeholder="Nombre" value={nombreEditar} onChange={(e)=>setNombreEditar(e.target.value)} />
+                    <input type="number" placeholder="Precio" value={precioEditar} onChange={(e)=>setPrecioEditar(e.target.value)} />
+                    <input type="number" placeholder="Cantidad" value={cantidadEditar} onChange={(e)=>setCantidadEditar(e.target.value)} />
+                    <input type="text" placeholder="Categoría" value={categoriaEditar} onChange={(e)=>setCategoriaEditar(e.target.value)} />
                     <button
+                        className="btnConfirmar"
                         onClick={()=>{
                             actualizarProducto(idEditar)
                         }}
-                    
                     >Confirmar</button>
-                </>
+                </div>
             }
-        </>
+        </div>
     )
 }
 

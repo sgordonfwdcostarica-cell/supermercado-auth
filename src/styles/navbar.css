@@ -1,25 +1,110 @@
-.cont-navbar{
-  background-color: #cccccc80;
-  width: 1520px;
-  position: absolute;
+.cont-navbar {
+  background: var(--sf-surface);
+  width: 100%;
+  position: sticky;
   top: 0;
-  left: 0px;
-  border-bottom: none;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* very subtle shadow */
 }
 
-.cont-links{
+.navbar-inner {
   display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  position: relative;
-  top: -40px;
-
-  .links{
-    text-decoration: none;
-    color: #222;
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
 }
 
-.titulo{
-  color: #222;
+/* LOGO */
+.titulo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--sf-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.logo-icon {
+  color: var(--sf-green);
+  font-size: 1.5rem;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0 2rem;
+}
+.search-icon {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+  color: var(--sf-text-primary);
+}
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+/* RIGHT LINKS */
+.cont-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-login {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sf-text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.user-icon {
+  font-size: 1.1rem;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #dcfce7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cart-icon {
+  color: var(--sf-green);
+  font-size: 1.25rem;
+}
+.cart-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
 }

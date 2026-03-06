@@ -21,45 +21,61 @@ function FormProductos() {
   }
 
   return (
-    <div className="formproductos">
-      <h2>Registro de Productos</h2>
+    <div className="container" style={{ padding: '2rem' }}>
+      <div className="formproductos">
+        <h2>Registro de Productos</h2>
 
-      <input
-        type="text"
-        placeholder="Nombre del producto"
-        className="inputRegistro"
-        onChange={(e) => setName(e.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="Nombre del producto"
+          className="inputRegistro"
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input
-        type="number"
-        placeholder="Precio"
-        className="inputRegistro"
-        onChange={(e) => setPrice(e.target.value)}
-      />
+        <input
+          type="number"
+          placeholder="Precio"
+          className="inputRegistro"
+          onChange={(e) => setPrice(e.target.value)}
+        />
 
-      <input
-        type="number"
-        placeholder="Cantidad"
-        className="inputRegistro"
-        onChange={(e) => setQuantity(e.target.value)}
-      />
+        <input
+          type="number"
+          placeholder="Cantidad"
+          className="inputRegistro"
+          onChange={(e) => setQuantity(e.target.value)}
+        />
 
-      <select
-        className="selectRegistro"
-        onChange={(e) => setCategory(e.target.value)}
-      >
-        <option value="">Seleccionar categoría</option>
-        <option value="frutas">Frutas</option>
-        <option value="verduras">Verduras</option>
-        <option value="lácteos">Lácteos</option>
-      </select>
+        <select
+          className="selectRegistro"
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Seleccionar categoría</option>
+          <option value="frutas">Frutas</option>
+          <option value="verduras">Verduras</option>
+          <option value="lácteos">Lácteos</option>
+        </select>
 
-      <button className="btnRegistro" onClick={productosRegistro}>
-        Guardar Producto
-      </button>
+        <div style={{ textAlign: "center", marginTop: "1.8rem" }}>
+          <button
+            onClick={productosRegistro}
+            className="submit-btn"
+            style={{ 
+              padding: '10px 20px', 
+              backgroundColor: '#4CAF50', 
+              color: 'white', 
+              border: 'none', 
+              borderRadius: '4px', 
+              cursor: 'pointer' 
+            }}
+          >
+            Registrar Producto
+          </button>
+        </div>
+      </div>
     </div>
   );
+
 }
 
 export default FormProductos;

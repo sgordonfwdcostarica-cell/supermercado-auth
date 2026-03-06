@@ -1,81 +1,69 @@
-/* Fondo general */
-body{
-  margin:0;
-  padding:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:  url('../imgs/fondo.avif') center/cover no-repeat;
-  background-blend-mode: overlay;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.login-container, .register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 72px);
+  padding: 2rem;
+  background-color: var(--sf-bg-main);
 }
 
-/* Contenedor del formulario */
-form{
-  background:white;
-  padding:40px;
-  border-radius:16px;
-  width:320px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  box-shadow:0px 12px 30px rgba(76, 175, 80, 0.25);
-  border:2px solid #4CAF50;
+form {
+  background: var(--sf-surface);
+  padding: 3rem 2.5rem;
+  border-radius: var(--sf-rad-lg);
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--sf-shadow-card);
+  border: 1px solid var(--sf-border);
 }
 
-/* Titulo opcional */
-form::before{
-  content:"SuperMarket Admin";
-  font-size:24px;
-  font-weight:bold;
-  text-align:center;
-  margin-bottom:10px;
-  color:#4CAF50;
+.inputs-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 2px solid var(--sf-green);
+  border-radius: var(--sf-rad-md);
+  background-color: #f8fafc; /* subtly distinct background for the framed area */
 }
 
-/* Inputs */
-input{
-  padding:12px;
-  border-radius:10px;
-  border:2px solid #4CAF50;
-  font-size:15px;
-  transition:0.3s;
-  background:#F1F8E9;
+.login-container form::before {
+  content: "🔐 Iniciar Sesión";
+}
+.formRegistro::before {
+  content: "👤 Crear Cuenta";
 }
 
-/* efecto focus */
-input:focus{
-  outline:none;
-  border:2px solid #00BCD4;
-  box-shadow:0 0 8px rgba(0, 188, 212, 0.4);
-  background:#E0F2F1;
+form::before {
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--sf-text-primary);
+  display: block;
 }
 
-/* Botón */
-button{
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background: #4CAF50;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-  box-shadow:0 4px 12px rgba(76, 175, 80, 0.3);
+input, select {
+  padding: 0.875rem 1rem;
+  border-radius: var(--sf-rad-sm);
+  border: 1px solid transparent;
+  font-size: 1rem;
+  background-color: var(--sf-surface-alt);
+  color: var(--sf-text-primary);
+  transition: all 0.2s ease;
 }
 
-/* Hover botón */
-button:hover{
-  background: #2E7D32;
-  transform:scale(1.03);
-  box-shadow:0 6px 16px rgba(76, 175, 80, 0.4);
+input::placeholder {
+  color: var(--sf-text-muted);
 }
 
-/* Responsive */
-@media (max-width:400px){
-  form{
-    width:90%;
-  }
+input:focus, select:focus {
+  outline: none;
+  background-color: var(--sf-surface);
+  border-color: var(--sf-green);
+  box-shadow: 0 0 0 3px var(--sf-green-light);
 }
+
