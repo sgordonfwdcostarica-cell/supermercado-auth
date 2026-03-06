@@ -15,7 +15,7 @@ function AdminDashboard() {
 
       <FormProductos/>
 
-      <ListaProductos/>
+      <ListaProductos isAdmin={true}/>
     </div>
   );
 }

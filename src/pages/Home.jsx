@@ -1,6 +1,7 @@
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
+import ListaProductos from "../Components/ListaProductos";
 
 function Home() {
   return (
@@ -28,6 +29,11 @@ function Home() {
              <div className="cat-item"><div className="cat-icon">🥫</div><span>Despensa</span></div>
              <div className="cat-item"><div className="cat-icon">🥖</div><span>Panadería</span></div>
           </div>
+        </section>
+
+        {/* Real Product List */}
+        <section className="productos-home">
+          <ListaProductos isAdmin={false} />
         </section>
       </div>
 

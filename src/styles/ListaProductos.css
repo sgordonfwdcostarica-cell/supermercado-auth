@@ -13,6 +13,13 @@
   --sf-shadow-card: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
+.lista-productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
 /* Identical Product Card Reference Styling */
 .productoCard {
   background: var(--sf-surface);
@@ -32,7 +39,7 @@
 
 /* Top image placeholder */
 .card-image-placeholder {
-  height: 180px;
+  height: 120px;
   background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
   background-size: cover;
   background-position: center;
@@ -44,11 +51,11 @@
 
 .card-image-container {
   position: relative;
-  height: 180px;
+  height: 120px;
 }
 
 .card-image {
-  height: 180px;
+  height: 120px;
   width: 100%;
   object-fit: cover;
 }
@@ -69,7 +76,7 @@
 .productoInfo {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+  padding: 1rem 1rem 0.5rem 1rem;
 }
 
 .productoInfo h3 {
@@ -108,7 +115,7 @@
 .productoActions {
   display: flex;
   gap: 0.5rem;
-  padding: 0 1.25rem 1.25rem 1.25rem;
+  padding: 0 1rem 1rem 1rem;
   margin-top: auto;
 }
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { getData, deleteData, patchData } from "../services/fetch"
 import '../styles/ListaProductos.css'
 
-function ListaProductos() {
+function ListaProductos({ isAdmin = true }) {
 
     const [productos, setProductos] = useState([])
 
@@ -21,7 +21,7 @@ function ListaProductos() {
             setProductos(datos)
         }
         traerproducts()
-    }, [])
+    }, [productos])
 
     async function eliminarProducto(id) {
         // Lógica para eliminar el producto con el ID proporcionado
@@ -43,7 +43,9 @@ function ListaProductos() {
 
     return (
         <div className="container" style={{ padding: '2rem' }}>
-            <h2>Lista de Productos</h2>
+            <h2 style={{ textAlign: "center", marginBottom: "2rem" }}>
+                {isAdmin ? "Lista de Productos (Admin)" : "Nuestros Productos"}
+            </h2>
             <div className="lista-productos-container">
             {productos.map((producto) => {
                 return (
@@ -69,20 +71,28 @@ function ListaProductos() {
                             </div>
                         </div>
                         <div className="productoActions">
-                            <button className="btnEditar" onClick={()=>{
-                                setMostrarEditar(!mostrarEditar)
-                                setIdEditar(producto.id)
-                                setNombreEditar(producto.nombre)
-                                setPrecioEditar(producto.precio)
-                                setCantidadEditar(producto.cantidad)
-                                setCategoriaEditar(producto.categoria)
-                                setImagenEditar(producto.img || "")
-                            }}>
-                                🛒 Editar
-                            </button>
-                            <button className="btnEliminar" onClick={() => {
-                                eliminarProducto(producto.id)
-                            }}>🗑️</button>
+                            {isAdmin ? (
+                                <>
+                                    <button className="btnEditar" onClick={()=>{
+                                        setMostrarEditar(!mostrarEditar)
+                                        setIdEditar(producto.id)
+                                        setNombreEditar(producto.nombre)
+                                        setPrecioEditar(producto.precio)
+                                        setCantidadEditar(producto.cantidad)
+                                        setCategoriaEditar(producto.categoria)
+                                        setImagenEditar(producto.img || "")
+                                    }}>
+                                        🛒 Editar
+                                    </button>
+                                    <button className="btnEliminar" onClick={() => {
+                                        eliminarProducto(producto.id)
+                                    }}>🗑️</button>
+                                </>
+                            ) : (
+                                <button className="btnAgregar">
+                                    <span>➕</span> Agregar
+                                </button>
+                            )}
                         </div>
                     </div>
                 )

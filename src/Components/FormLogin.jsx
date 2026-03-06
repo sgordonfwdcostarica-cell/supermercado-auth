@@ -29,8 +29,11 @@ function FormLogin() {
     const usuarioValido = usuarios.find((u) => u.email === email && u.clave === password)
 
     if (usuarioValido) {
-      alert("Login correcto");
-      navigate("/admin");
+      if (usuarioValido.rol === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/");
+      }
     } else {
       alert("Email o contraseña incorrectos");
     }
