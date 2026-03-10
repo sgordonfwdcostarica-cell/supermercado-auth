@@ -1,14 +1,30 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import '../styles/Toast.css';
 
-const ToastContext = createContext();
+interface Toast {
+  id: number;
+  message: string;
+  type: string;
+}
 
-export const useToast = () => useContext(ToastContext);
+interface ToastContextType {
+  showToast: (message: string, type?: string) => void;
+}
 
-export const ToastProvider = ({ children }) => {
-  const [toasts, setToasts] = useState([]);
+const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
-  const showToast = (message, type = 'info') => {
+export const useToast = () => {
+  const context = useContext(ToastContext);
+  if (!context) {
+    throw new Error('useToast must be used within a ToastProvider');
+  }
+  return context;
+};
+
+export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
+  const [toasts, setToasts] = useState<Toast[]>([]);
+
+  const showToast = (message: string, type: string = 'info') => {
     const id = Date.now();
     setToasts((prev) => [...prev, { id, message, type }]);
     setTimeout(() => {

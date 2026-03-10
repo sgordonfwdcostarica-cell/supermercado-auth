@@ -1,3 +1,4 @@
+import React from "react";
 import { getData } from "../services/fetch";
 import "../styles/Login.css";
 import { useEffect, useState } from "react";
@@ -8,7 +9,7 @@ function FormLogin() {
   const [password, setPassword] = useState<string>("");
   const [role, setRole] = useState<string>("cliente");
   const [usuarios, setUsuarios] = useState<any[]>([]);
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function FormLogin() {
     traerUsuarios()
   }, [])
 
-  function handleLogin(e) {
+  function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!email || !password) {
@@ -42,7 +43,7 @@ function FormLogin() {
 
   return (
     <div className="login-container">
-      <form>
+      <form onSubmit={handleLogin}>
 
         <div className="inputs-frame">
           <input
@@ -57,7 +58,7 @@ function FormLogin() {
           />
         </div>
 
-        <button onClick={handleLogin}  type="button" className="submit-btn">Login</button>
+        <button type="submit" className="submit-btn">Login</button>
 
       </form>
     </div>
