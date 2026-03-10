@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function FormLogin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("cliente");
-  const [usuarios, setUsuarios] = useState([])
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [role, setRole] = useState<string>("cliente");
+  const [usuarios, setUsuarios] = useState<any[]>([]);
+  
   const navigate = useNavigate();
 
   useEffect(() => {

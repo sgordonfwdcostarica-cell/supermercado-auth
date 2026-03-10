@@ -4,11 +4,11 @@ import '../styles/FormProductos.css'
 
 function FormProductos() {
 
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [category, setCategory] = useState("");
-  const [img, setImg] = useState("");
+  const [name, setName] = useState<String>("");
+  const [price, setPrice] = useState<String>("");
+  const [quantity, setQuantity] = useState<String>("");
+  const [category, setCategory] = useState<String>("");
+  const [img, setImg] = useState<String>("");
 
   async function productosRegistro() {
     const producto = {

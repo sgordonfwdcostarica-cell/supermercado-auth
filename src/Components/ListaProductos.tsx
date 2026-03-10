@@ -7,13 +7,13 @@ function ListaProductos({ isAdmin = true }) {
 
     const [productos, setProductos] = useState([])
 
-    const [idEditar,setIdEditar] = useState("")
+    const [idEditar,setIdEditar] = useState<String>("")
     const [mostrarEditar,setMostrarEditar] = useState(false)
-    const [nombreEditar,setNombreEditar] = useState("")
-    const [precioEditar,setPrecioEditar] = useState("")
-    const [cantidadEditar,setCantidadEditar] = useState("")
-    const [categoriaEditar,setCategoriaEditar] = useState("")
-    const [imagenEditar,setImagenEditar] = useState("")
+    const [nombreEditar,setNombreEditar] = useState<String>("")
+    const [precioEditar,setPrecioEditar] = useState<String>("")
+    const [cantidadEditar,setCantidadEditar] = useState<String>("")
+    const [categoriaEditar,setCategoriaEditar] = useState<String>("")
+    const [imagenEditar,setImagenEditar] = useState<String>("")
 
     useEffect(() => {
         async function traerproducts() {

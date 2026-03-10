@@ -5,10 +5,10 @@ import { postData } from "../services/fetch";
 
 function FormRegistro() {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [role, setRole] = useState("cliente");
+    const [name, setName] = useState<String>("");
+    const [email, setEmail] = useState<String>("");
+    const [password, setPassword] = useState<String>("");
+    const [role, setRole] = useState<String>("cliente");
 
     async function usuariosRegistro() {
         const usuario = {
